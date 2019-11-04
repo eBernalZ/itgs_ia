@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Samira Hosseini's Website</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="../main.css">
+    <link rel="stylesheet" href="../publications/assets/css/publications.css">
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+        google.charts.load('current', {
+            'packages': ['timeline']
+        });
+        google.charts.setOnLoadCallback(drawChart);
+
+        function drawChart() {
+            var html_element = document.getElementById('timeline');
+            var timeline = new google.visualization.Timeline(html_element);
+            var researchTimeline = new google.visualization.DataTable();
+            var options = {
+                timeline: {
+                    showRowLabels: false
+                }
+
+            };
+
+            researchTimeline.addColumn({
+                type: 'string',
+                id: 'Term'
+            });
+            researchTimeline.addColumn({
+                type: 'string',
+                id: 'Name'
+            });
+            researchTimeline.addColumn({
+                type: 'date',
+                id: 'Start'
+            });
+            researchTimeline.addColumn({
+                type: 'date',
+                id: 'End'
+            });
+            researchTimeline.addRows([
+                ['President', 'Washington', new Date(1789, 3, 30), new Date(1797, 2, 4)],
+                ['President', 'Adams', new Date(1797, 2, 4), new Date(1801, 2, 4)],
+                ['President', 'Jefferson', new Date(1801, 2, 4), new Date(1809, 2, 4)]
+            ]);
+
+            timeline.draw(researchTimeline, options);
+        }
+    </script>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-transparent">
+        <a class="navbar-brand">Samira Hosseini</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="../home/home.html">Home </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../openpositions/openpositions.html">Open Positions</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../research/research.html">Research</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link active" href="../publications/publications.html">Publications</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../people/people.html">People</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../abouttec/abouttec.html">About Tec</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div id="content" class="container-fluid">
+        <h1> publications page </h1>
+        <div id="timeline" style="height: 180px;"></div>
+
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous">
+    </script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"
+        integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous">
+    </script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"
+        integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous">
+    </script>
+</body>
+
+</html>
